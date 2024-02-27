@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="my-4">Elenco dipendenti</h2>
+                <table class="table table-bordered table-dark table-striped">
+                    <thead>
+                        <tr class="text-center">
+                            <th>Nome</th>
+                            <th>Cognome</th>
+                            <th>Indirizzo</th>
+                            <th>Codice Fiscale</th>
+                            <th>Coniugato</th>
+                            <th>Figli</th>
+                            <th>Mansione</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var d in ViewBag.ListaDipendenti)
+                        {
+                            <tr class="text-center">
+                                <td>@d.Nome</td>
+                                <td>@d.Cognome</td>
+                                <td>@d.Indirizzo</td>
+                                <td>@d.CF</td>
+                                <td>@d.Sposato</td>
+                                <td>@d.Numero_Figli</td>
+                                <td>@d.Mansione</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <h2 class="my-4">Elenco pagamenti</h2>
+                <table class="table table-bordered table-dark table-striped">
+                    <thead>
+                        <tr>
+                            <th>ID Dipendente</th>
+                            <th>Data Pagamento</th>
+                            <th>Ammontare</th>
+                            <th>Tipo Pagamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var p in ViewBag.ListaPagamenti)
+                        {
+                            <tr>
+                                <td>@p.IDDipendente</td>
+                                <td>@p.Data_Pagamento</td>
+                                <td>@p.Ammontare</td>
+                                <td>@p.Tipo_Pagamento</td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>

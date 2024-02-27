@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h2 class="my-4">Elenco pagamenti Azienda Edile</h2>
+
+
+<table class="table table-bordered table-info table-striped">
+    <thead>
+        <tr>
+            <th>ID Dipendente</th>
+            <th>Data Pagamento</th>
+            <th>Ammontare</th>
+            <th>Tipo Pagamento</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+
+        @foreach (BE_U2_W1_D1_D2_MVC.Models.Pagamento p in Model)
+        {
+            <tr>
+                <td>@p.IDDipendente</td>
+                <td>@p.Data_Pagamento</td>
+                <td>@p.Ammontare</td>
+                <td>@p.Tipo_Pagamento</td>
+            </tr>
+        }
+
+    </tbody>
+</table>
